@@ -36,7 +36,7 @@ public class GroupMulticastServer
                 //Send the packet
                 serverSocket.send(messagePacket);
 
-                System.out.printf("--Server has sent a new packet:\n\t%s\n", message);
+                System.out.printf("<-Server has sent a new packet:\n\t%s\n", message);
                 TimeUnit.SECONDS.sleep(3);
             }
         } catch (IOException | InterruptedException e)

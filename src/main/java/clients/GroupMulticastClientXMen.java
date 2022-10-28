@@ -5,7 +5,7 @@ import server.GroupMulticastServer;
 import java.io.IOException;
 import java.net.*;
 
-public class GroupMulticastClientAvengers
+public class GroupMulticastClientXMen
 {
     public static void main(String[] args) throws UnknownHostException
     {
@@ -18,7 +18,7 @@ public class GroupMulticastClientAvengers
         try (MulticastSocket socket = new MulticastSocket(GroupMulticastServer.PORT))
         {
             InetSocketAddress group = new InetSocketAddress(address, GroupMulticastServer.PORT);
-            NetworkInterface networkInterface = NetworkInterface.getByName("avengers07");
+            NetworkInterface networkInterface = NetworkInterface.getByName("xmen08");
 
             //Join the group
             socket.joinGroup(group, networkInterface);
@@ -32,7 +32,7 @@ public class GroupMulticastClientAvengers
 
                 //Convert message from byte[] to string
                 String message = new String(messagePacket.getData(), 0, messagePacket.getLength());
-                System.out.printf("->Team Avengers received:\n\t%s\n", message);
+                System.out.printf("->Team X-Men received:\n\t%s\n", message);
             }
         }
         catch (IOException e)
